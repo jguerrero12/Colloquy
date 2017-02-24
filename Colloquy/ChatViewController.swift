@@ -12,7 +12,7 @@ import Parse
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    @IBOutlet weak var stackView: UIStackView!
+    
     @IBOutlet weak var chatTxtField: UITextField!
     @IBOutlet weak var messagesTableView: UITableView!
     var messages: [PFObject]? = []
@@ -50,12 +50,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.messageLabel.text = message?["text"] as? String
         
-        if let user = message?["user"] as? String {
-            cell.userLabel.text = user
+        if let user = message?["user"] as? PFUser {
+            cell.userLabel.text = user.username
         }
         else{
             UIView.animate(withDuration: 0.25) { () -> Void in
-                let firstView = self.stackView.arrangedSubviews[0]
+                let firstView = cell.stackView.arrangedSubviews[0]
                 firstView.isHidden = true
             }
         }
@@ -71,7 +71,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func onTimer() {
         
         //pull the messages from parse server...
-        let query = PFQuery(className:"Messages")
+        let query = PFQuery(className:"Message")
         query.includeKey("user")
         query.order(byDescending: "createdAt") // sort messages in descending order of date created.
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
@@ -100,7 +100,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("Message saved successfully!")
                 }
                 else{
-                    let alert = UIAlertController(title: "Error", message: "\(error?.localizedDescription)", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Error", message: "\(error!.localizedDescription)", preferredStyle: .alert)
                     
                     // create an OK action
                     let OKAction = UIAlertAction(title: "OK", style: .default)
