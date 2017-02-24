@@ -14,8 +14,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var chatTxtField: UITextField!
     @IBOutlet weak var messagesTableView: UITableView!
-    var messages: [String]!
-    var users: [String]!
+    var messages: NSArray!
+    var users: NSArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +72,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if error == nil {
                 if objects != nil { // if the retrieved objects (messages) var is not empty, make messages equal to them.
-                    self.messages = objects! as NSArray!
+                    self.messages = objects as NSArray!
                     self.messagesTableView.reloadData()
                 }
             }
