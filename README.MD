@@ -9,11 +9,12 @@ Time spent: 6-8 hours spent in total
 The following **required** functionality is completed:
 
 - [x] User can sign up or login using their email and password
-- [ ] User can see a list of chats from the server and post a message
+- [x] User can see a list of chats from the server and post a message
 
 The following **additional** features are implemented:
 
 - [x] added app icon.
+- [x] added theming.
 
 ## Video Walkthrough 
 
