@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -110,39 +109,33 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a1M-kq-gUH" id="FCu-5L-6oh">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3sg-vM-GNP">
-                                                    <rect key="frame" x="8" y="8" width="69" height="41"/>
+                                                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nvw-DZ-SY4">
+                                                    <rect key="frame" x="8" y="8" width="304" height="99"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC5-69-9kk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="37" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="36.5" height="45"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db7-Sg-RzD">
-                                                            <rect key="frame" x="0.0" y="20.5" width="69" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="49" width="69" height="50"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="VC5-69-9kk" secondAttribute="trailing" constant="32.5" id="HSM-My-9Tb"/>
-                                                        <constraint firstAttribute="trailing" secondItem="db7-Sg-RzD" secondAttribute="trailing" id="Wrw-wk-nOT"/>
-                                                        <constraint firstAttribute="bottom" secondItem="db7-Sg-RzD" secondAttribute="bottom" id="e9s-sl-Uu2"/>
-                                                        <constraint firstItem="VC5-69-9kk" firstAttribute="top" secondItem="3sg-vM-GNP" secondAttribute="top" id="exu-9h-Txm"/>
-                                                        <constraint firstItem="db7-Sg-RzD" firstAttribute="top" secondItem="VC5-69-9kk" secondAttribute="bottom" id="oZU-PV-qah"/>
-                                                        <constraint firstItem="VC5-69-9kk" firstAttribute="leading" secondItem="3sg-vM-GNP" secondAttribute="leading" id="ogV-2z-am6"/>
-                                                        <constraint firstItem="db7-Sg-RzD" firstAttribute="leading" secondItem="3sg-vM-GNP" secondAttribute="leading" id="yTI-9h-TCq"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3sg-vM-GNP" firstAttribute="leading" secondItem="FCu-5L-6oh" secondAttribute="leadingMargin" id="Eju-4x-aWZ"/>
-                                                <constraint firstItem="3sg-vM-GNP" firstAttribute="top" secondItem="FCu-5L-6oh" secondAttribute="topMargin" id="fek-SK-ute"/>
+                                                <constraint firstAttribute="trailing" secondItem="nvw-DZ-SY4" secondAttribute="trailing" constant="8" id="Iak-fh-qgG"/>
+                                                <constraint firstItem="nvw-DZ-SY4" firstAttribute="top" secondItem="FCu-5L-6oh" secondAttribute="top" constant="8" id="MfB-jI-Mdq"/>
+                                                <constraint firstAttribute="bottom" secondItem="nvw-DZ-SY4" secondAttribute="bottom" constant="8" id="UHa-GJ-h5V"/>
+                                                <constraint firstItem="nvw-DZ-SY4" firstAttribute="leading" secondItem="FCu-5L-6oh" secondAttribute="leading" constant="8" id="jrJ-cg-iPI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -170,6 +163,7 @@
                     <connections>
                         <outlet property="chatTxtField" destination="wW0-aN-cTA" id="4OP-aU-eSQ"/>
                         <outlet property="messagesTableView" destination="TyV-1G-fOA" id="NMM-Xn-pD6"/>
+                        <outlet property="stackView" destination="nvw-DZ-SY4" id="b4w-8u-6E4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sV-7V-uuT" userLabel="First Responder" sceneMemberID="firstResponder"/>

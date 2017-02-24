@@ -12,10 +12,10 @@ import Parse
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var chatTxtField: UITextField!
     @IBOutlet weak var messagesTableView: UITableView!
-    var messages: NSArray!
-    var users: NSArray!
+    var messages: [PFObject]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +35,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if messages != nil{
-            return messages.count
+        if messages != nil {
+            return messages!.count
         }
         else {
             return 0
@@ -44,15 +44,20 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageCell
+        let message = messages?[indexPath.row]
         
-        cell.messageLabel.text = messages.object(at: indexPath.row) as? String
+        cell.messageLabel.text = message?["text"] as? String
         
-        if users.object(at: indexPath.row) as? String != nil {
-            cell.userLabel.text = users.object(at: indexPath.row) as? String
+        if let user = message?["user"] as? String {
+            cell.userLabel.text = user
         }
         else{
-            cell.userLabel.isHidden = true
+            UIView.animate(withDuration: 0.25) { () -> Void in
+                let firstView = self.stackView.arrangedSubviews[0]
+                firstView.isHidden = true
+            }
         }
         
         return cell
@@ -72,7 +77,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if error == nil {
                 if objects != nil { // if the retrieved objects (messages) var is not empty, make messages equal to them.
-                    self.messages = objects as NSArray!
+                    self.messages = objects
                     self.messagesTableView.reloadData()
                 }
             }
@@ -87,7 +92,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         if chatTxtField.text != nil {
             let message = PFObject(className:"Message")
             message["text"] = chatTxtField.text!
-            message["user"] = PFUser.getCurrentUserInBackground()
+            message["user"] = PFUser.current()
             
             message.saveInBackground { (success: Bool, error: Error?) in
                 if(success){
