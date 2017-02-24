@@ -3,25 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		336B126D1E5D6526001662EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B126C1E5D6526001662EF /* AppDelegate.swift */; };
-		336B126F1E5D6526001662EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B126E1E5D6526001662EF /* ViewController.swift */; };
+		336B126F1E5D6526001662EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B126E1E5D6526001662EF /* LoginViewController.swift */; };
 		336B12721E5D6526001662EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336B12701E5D6526001662EF /* Main.storyboard */; };
 		336B12741E5D6526001662EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 336B12731E5D6526001662EF /* Assets.xcassets */; };
 		336B12771E5D6526001662EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 336B12751E5D6526001662EF /* LaunchScreen.storyboard */; };
+		33962BE21E5E4188004B83BC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33962BE11E5E4188004B83BC /* ChatViewController.swift */; };
+		33962BE51E5FB2E9004B83BC /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33962BE41E5FB2E9004B83BC /* MessageCell.swift */; };
+		355E123EE5D4461C9F46C1A0 /* Pods_Colloquy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D729C1C71C05E825B227F46 /* Pods_Colloquy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		336B12691E5D6526001662EF /* Colloquy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colloquy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		336B126C1E5D6526001662EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		336B126E1E5D6526001662EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		336B126E1E5D6526001662EF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		336B12711E5D6526001662EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		336B12731E5D6526001662EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		336B12761E5D6526001662EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		336B12781E5D6526001662EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33962BE11E5E4188004B83BC /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		33962BE41E5FB2E9004B83BC /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		3D729C1C71C05E825B227F46 /* Pods_Colloquy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Colloquy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5DA7461A834BB23C581337 /* Pods-Colloquy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colloquy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colloquy/Pods-Colloquy.release.xcconfig"; sourceTree = "<group>"; };
+		8CD7CC0834A636405465F928 /* Pods-Colloquy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colloquy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Colloquy/Pods-Colloquy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355E123EE5D4461C9F46C1A0 /* Pods_Colloquy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15BEA9824673D4493056D4A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D729C1C71C05E825B227F46 /* Pods_Colloquy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		336B12601E5D6526001662EF = {
 			isa = PBXGroup;
 			children = (
 				336B126B1E5D6526001662EF /* Colloquy */,
 				336B126A1E5D6526001662EF /* Products */,
+				BD7FC2295F703EF259EBF274 /* Pods */,
+				15BEA9824673D4493056D4A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +73,41 @@
 		336B126B1E5D6526001662EF /* Colloquy */ = {
 			isa = PBXGroup;
 			children = (
+				33962BE31E5FB2C9004B83BC /* Views */,
+				33962BE01E5E4164004B83BC /* View Controllers */,
 				336B126C1E5D6526001662EF /* AppDelegate.swift */,
-				336B126E1E5D6526001662EF /* ViewController.swift */,
 				336B12701E5D6526001662EF /* Main.storyboard */,
 				336B12731E5D6526001662EF /* Assets.xcassets */,
 				336B12751E5D6526001662EF /* LaunchScreen.storyboard */,
 				336B12781E5D6526001662EF /* Info.plist */,
 			);
 			path = Colloquy;
+			sourceTree = "<group>";
+		};
+		33962BE01E5E4164004B83BC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				336B126E1E5D6526001662EF /* LoginViewController.swift */,
+				33962BE11E5E4188004B83BC /* ChatViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		33962BE31E5FB2C9004B83BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				33962BE41E5FB2E9004B83BC /* MessageCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BD7FC2295F703EF259EBF274 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CD7CC0834A636405465F928 /* Pods-Colloquy.debug.xcconfig */,
+				6C5DA7461A834BB23C581337 /* Pods-Colloquy.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +117,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 336B127B1E5D6526001662EF /* Build configuration list for PBXNativeTarget "Colloquy" */;
 			buildPhases = (
+				D33941FAE07BA1F76663725A /* [CP] Check Pods Manifest.lock */,
 				336B12651E5D6526001662EF /* Sources */,
 				336B12661E5D6526001662EF /* Frameworks */,
 				336B12671E5D6526001662EF /* Resources */,
+				6B2FB1E4478D094AD92DE43A /* [CP] Embed Pods Frameworks */,
+				DCF84A4954A62B3F5F401A71 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -101,7 +150,7 @@
 				};
 			};
 			buildConfigurationList = 336B12641E5D6526001662EF /* Build configuration list for PBXProject "Colloquy" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -131,12 +180,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6B2FB1E4478D094AD92DE43A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colloquy/Pods-Colloquy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D33941FAE07BA1F76663725A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DCF84A4954A62B3F5F401A71 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colloquy/Pods-Colloquy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		336B12651E5D6526001662EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				336B126F1E5D6526001662EF /* ViewController.swift in Sources */,
+				336B126F1E5D6526001662EF /* LoginViewController.swift in Sources */,
+				33962BE51E5FB2E9004B83BC /* MessageCell.swift in Sources */,
+				33962BE21E5E4188004B83BC /* ChatViewController.swift in Sources */,
 				336B126D1E5D6526001662EF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,9 +355,12 @@
 		};
 		336B127C1E5D6526001662EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CD7CC0834A636405465F928 /* Pods-Colloquy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 936NAP953U;
 				INFOPLIST_FILE = Colloquy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Colloquy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -268,9 +370,12 @@
 		};
 		336B127D1E5D6526001662EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C5DA7461A834BB23C581337 /* Pods-Colloquy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 936NAP953U;
 				INFOPLIST_FILE = Colloquy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Colloquy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -297,6 +402,7 @@
 				336B127D1E5D6526001662EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

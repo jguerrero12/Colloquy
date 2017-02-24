@@ -1,0 +1,6 @@
+framework module Pods_Colloquy {
+  umbrella header "Pods-Colloquy-umbrella.h"
+
+  export *
+  module * { export * }
+}
